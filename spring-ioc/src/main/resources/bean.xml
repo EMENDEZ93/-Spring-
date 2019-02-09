@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+	<bean id="basicPackage" class="em.spring.ioc.bean.BasicPackage"></bean>
+	<bean id="businessPackage" class="em.spring.ioc.bean.NegociosPackage"></bean>
+	<bean id="clienteService" class="em.spring.ioc.service.ClienteService">
+		<property name="clientePackage">
+			<ref bean="basicPackage" />
+		</property>
+	</bean>
+</beans>
