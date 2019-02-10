@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="cliente" class="em.spring.lifecycle.bean.Cliente">
+		<property name="name" value="Jack" />
+	</bean>
+
+	<bean name="clienteServiceCustomMethod" init-method="clienteInitBean"
+		destroy-method="clienteDestroyBean"
+		class="em.spring.lifecycle.service.ClienteServiceImplCustomMethod">
+		<property name="cliente" ref="cliente" />
+	</bean>
+
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+</beans>
